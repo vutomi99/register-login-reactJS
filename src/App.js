@@ -8,11 +8,19 @@ function App() {
   //function to store current form
     const [currentForm , setCurrentForm] = useState('login');
 
+    const toggleForm =(formName)=>{
+      setCurrentForm(formName);
+    }
+
   return (
 
     <div className="App">
+      {
+        // Ternary oprator to determine the form to display
 
-        
+        currentForm === "login"? <Login onFormSwitch={toggleForm}/> : <Register />
+      }
+
     </div>
   );
 }
